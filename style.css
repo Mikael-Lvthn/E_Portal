@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -13,6 +14,7 @@ body {
     padding: 20px 0;
 }
 
+/* Header styles */
 .main-header {
     background-color: #0056b3;
     color: #fff;
@@ -71,7 +73,6 @@ body {
     z-index: 1;
     border-radius: 20px;
     overflow: hidden;
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -116,6 +117,7 @@ body {
     cursor: pointer;
 }
 
+/* Hero Section */
 .hero-section {
     color: #fff;
     text-align: center;
@@ -124,7 +126,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    background-image: url('images/bgprofile.png'); /* Using placeholder for consistency */
+    background-image: url('images/bgprofile.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -159,6 +161,7 @@ body {
     margin-bottom: 30px;
 }
 
+/* Button styles */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -170,6 +173,14 @@ body {
     cursor: pointer;
 }
 
+/* Grouped hover effects for elements that scale to 1.05 */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-tertiary:hover,
+.modal-tracker-link:hover {
+    transform: scale(1.05);
+}
+
 .btn-primary {
     background-color: #28a745;
     color: #fff;
@@ -177,7 +188,6 @@ body {
 
 .btn-primary:hover {
     background-color: #218838;
-    transform: scale(1.05); /* Changed from translateY */
 }
 
 .btn-secondary {
@@ -187,37 +197,45 @@ body {
 
 .btn-secondary:hover {
     background-color: #5a6268;
-    transform: scale(1.05); /* Changed from translateY */
 }
 
 .btn-tertiary {
     background-color: transparent;
-    color: #0056b3;
-    border: 2px solid #0056b3;
+    color: #0056b3; /* Default blue text/border */
+    border: 2px solid #0056b3; /* Default blue border */
     padding: 10px 20px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-tertiary:hover {
-    background-color: #0056b3;
-    color: #fff;
-    border-color: #0056b3;
-    transform: scale(1.05); /* Changed from translateY */
+/* Fix for .btn-tertiary inside section-background */
+.section-background .btn-tertiary {
+    color: #fff; /* White text */
+    border-color: #fff; /* White border */
 }
 
+.section-background .btn-tertiary:hover {
+    background-color: #28a745; /* Green background on hover */
+    color: #fff; /* Keep text white */
+    border-color: #28a745; /* Green border on hover */
+}
+
+
+/* Info Section base styles (for sections like announcements, news, etc.) */
 .info-section {
-    padding: 60px 0;
+    position: relative;
+    z-index: 2; /* Ensure content is above background overlay */
     text-align: center;
+    padding: 0; /* Padding is handled by .section-background wrapper */
 }
 
 .info-section.light-bg {
-    background-color: #e9ecef;
+    background-color: transparent; /* Ensures no conflicting background color */
 }
 
 .info-section h2 {
     font-size: 2.2em;
     margin-bottom: 40px;
-    color: #0056b3;
+    color: #fff; /* White text for readability on dark backgrounds */
     position: relative;
     display: inline-block;
 }
@@ -227,13 +245,42 @@ body {
     position: absolute;
     width: 60px;
     height: 4px;
-    background-color: #28a745;
+    background-color: #28a745; /* Accent color */
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
 }
 
+/* Section Backgrounds for Announcements & News */
+.section-background {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0; /* Padding for the entire section with background */
+    color: #fff; /* Default text color for elements directly within this container */
+}
+
+.section-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimming overlay */
+    z-index: 1;
+}
+
+.announcements-background {
+    background-image: url('images/bgpeoples.png');
+}
+
+.news-events-background {
+    background-image: url('images/news.jpg');
+}
+
+/* Card styles */
 .grid-3-cols {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -249,21 +296,22 @@ body {
 }
 
 .card {
-    background-color: #fff;
+    background-color: #fff; /* Default white background for cards */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333; /* Default text color for cards */
 }
 
 .card:hover {
-    transform: scale(1.03); /* Changed from translateY(-5px) */
+    transform: scale(1.03);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
-    color: #0056b3;
+    color: #0056b3; /* Default title color */
     font-size: 1.5em;
     margin-top: 0;
     margin-bottom: 15px;
@@ -273,23 +321,29 @@ body {
 
 .card h3 .fas {
     margin-right: 10px;
-    color: #28a745;
+    color: #28a745; /* Default icon color */
 }
 
 .card p {
     font-size: 0.95em;
-    color: #555;
+    color: #555; /* Default paragraph color */
     margin-bottom: 15px;
 }
 
 .card .date {
     font-size: 0.85em;
-    color: #777;
+    color: #777; /* Default date color */
     font-style: italic;
 }
 
+/* Specific card variations within sections with backgrounds */
+.section-background .card {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white for cards on bg */
+}
+
+/* Specific alert/advisory card styles */
 .emergency-alert {
-    background-color: #ffe0e0;
+    background-color: rgba(255, 224, 224, 0.9);
     border-left: 5px solid #dc3545;
 }
 
@@ -302,7 +356,7 @@ body {
 }
 
 .advisory {
-    background-color: #fff3cd;
+    background-color: rgba(255, 243, 205, 0.9);
     border-left: 5px solid #ffc107;
 }
 
@@ -317,93 +371,6 @@ body {
 .section-more-link {
     margin-top: 40px;
     text-align: center;
-}
-
-footer {
-    background-color: #222;
-    color: #f8f8f8;
-    padding: 50px 0 20px;
-    font-size: 0.9em;
-}
-
-footer .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-    text-align: left;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 20px;
-}
-
-.footer-section h3 {
-    color: #28a745;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.footer-section p,
-.footer-section ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: #f8f8f8;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #28a745;
-}
-
-.footer-section.contact p {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.footer-section.contact .fas {
-    margin-right: 10px;
-    color: #28a745;
-}
-
-.social-icons a {
-    color: #f8f8f8;
-    font-size: 1.5em;
-    margin-right: 15px;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #28a745;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-bottom a {
-    color: #28a745;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
 }
 
 /* --- Modal Styles --- */
@@ -449,7 +416,7 @@ footer .container {
     margin-bottom: 30px;
 }
 
-/* Style for the prominent Tracker link */
+/* Tracker link inside modal */
 .modal-tracker-link {
     display: inline-flex;
     align-items: center;
@@ -471,8 +438,7 @@ footer .container {
 
 .modal-tracker-link:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Changed from translateY */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Add box-shadow to match other hover effects if missing */
 }
 
 .modal-tracker-link i {
@@ -505,7 +471,7 @@ footer .container {
 
 .modal-service-links a:hover {
     background-color: #0056b3;
-    transform: scale(1.03); /* Changed from translateY */
+    transform: scale(1.03);
 }
 
 .modal-service-links a i {
@@ -539,6 +505,7 @@ footer .container {
     cursor: pointer;
 }
 
+/* Keyframe Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -549,6 +516,7 @@ footer .container {
     to { transform: translateY(0); opacity: 1; }
 }
 
+/* Carousel Styles */
 .news-carousel-container {
     position: relative;
     width: 100%;
@@ -679,6 +647,7 @@ footer .container {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Media Queries */
 @media (max-width: 992px) {
     .news-grid-other {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -728,7 +697,6 @@ footer .container {
         box-shadow: none;
         width: 100%;
         background-color: #003060;
-        
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
@@ -756,7 +724,7 @@ footer .container {
         grid-template-columns: 1fr;
     }
 
-    .footer-section {
+    .footer-section { /* This rule is likely not needed due to inline styles in HTML, but kept if you have other uses for it */
         min-width: 100%;
         text-align: center;
     }
@@ -765,7 +733,7 @@ footer .container {
         justify-content: center;
     }
 
-    .social-icons {
+    .social-icons { /* This rule is likely not needed due to inline styles in HTML, but kept if you have other uses for it */
         text-align: center;
     }
 
