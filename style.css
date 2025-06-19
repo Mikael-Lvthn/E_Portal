@@ -1,4 +1,3 @@
-/* Base styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -14,27 +13,66 @@ body {
     padding: 20px 0;
 }
 
-/* Header styles */
+.fade-item {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(20px);
+}
+
+.fade-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Header Styles --- */
 .main-header {
     background-color: #0056b3;
     color: #fff;
-    padding: 10px 0;
+    /* Removed: padding: 0; as it's overridden by .main-header .main-header-container padding */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
+    overflow: visible;
+    height: 70px;
+    margin-bottom: -50px;
 }
 
-.main-header .container {
+.main-header .main-header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    flex-wrap: wrap;
+    height: 100%;
+    padding: 0 20px;
+    position: relative;
 }
 
-.logo h1 {
+.header-branding {
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-logo {
+    height: 100px;
+    width: auto;
+}
+
+.header-branding h1 {
     margin: 0;
     font-size: 1.8em;
+    white-space: nowrap;
+    /* Removed: color: #fff; as it's inherited from .header-branding */
+}
+
+.main-nav {
+    margin-right: 20px;
 }
 
 .main-nav ul {
@@ -115,9 +153,10 @@ body {
     color: #fff;
     font-size: 1.8em;
     cursor: pointer;
+    margin-left: 10px;
 }
 
-/* Hero Section */
+/* --- Hero Section Styles --- */
 .hero-section {
     color: #fff;
     text-align: center;
@@ -131,6 +170,7 @@ body {
     background-position: center;
     position: relative;
     overflow: hidden;
+    margin-top: 50px;
 }
 
 .hero-section::before {
@@ -161,7 +201,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* Button styles */
+/* --- Button Styles --- */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -173,7 +213,6 @@ body {
     cursor: pointer;
 }
 
-/* Grouped hover effects for elements that scale to 1.05 */
 .btn-primary:hover,
 .btn-secondary:hover,
 .btn-tertiary:hover,
@@ -201,41 +240,39 @@ body {
 
 .btn-tertiary {
     background-color: transparent;
-    color: #0056b3; /* Default blue text/border */
-    border: 2px solid #0056b3; /* Default blue border */
+    color: #0056b3;
+    border: 2px solid #0056b3;
     padding: 10px 20px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Fix for .btn-tertiary inside section-background */
 .section-background .btn-tertiary {
-    color: #fff; /* White text */
-    border-color: #fff; /* White border */
+    color: #fff;
+    border-color: #fff;
 }
 
 .section-background .btn-tertiary:hover {
-    background-color: #28a745; /* Green background on hover */
-    color: #fff; /* Keep text white */
-    border-color: #28a745; /* Green border on hover */
+    background-color: #28a745;
+    color: #fff;
+    border-color: #28a745;
 }
 
-
-/* Info Section base styles (for sections like announcements, news, etc.) */
+/* --- Info Section Styles --- */
 .info-section {
     position: relative;
-    z-index: 2; /* Ensure content is above background overlay */
+    z-index: 2;
     text-align: center;
-    padding: 0; /* Padding is handled by .section-background wrapper */
+    /* Removed: padding: 0; as it has no practical effect due to content controlling height/spacing */
 }
 
 .info-section.light-bg {
-    background-color: transparent; /* Ensures no conflicting background color */
+    background-color: transparent;
 }
 
 .info-section h2 {
     font-size: 2.2em;
     margin-bottom: 40px;
-    color: #fff; /* White text for readability on dark backgrounds */
+    color: #fff;
     position: relative;
     display: inline-block;
 }
@@ -245,20 +282,19 @@ body {
     position: absolute;
     width: 60px;
     height: 4px;
-    background-color: #28a745; /* Accent color */
+    background-color: #28a745;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
 }
 
-/* Section Backgrounds for Announcements & News */
 .section-background {
     position: relative;
     background-size: cover;
     background-position: center;
-    padding: 60px 0; /* Padding for the entire section with background */
-    color: #fff; /* Default text color for elements directly within this container */
+    padding: 60px 0;
+    color: #fff;
 }
 
 .section-background::before {
@@ -268,7 +304,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dimming overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -280,7 +316,6 @@ body {
     background-image: url('images/news.jpg');
 }
 
-/* Card styles */
 .grid-3-cols {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -296,13 +331,13 @@ body {
 }
 
 .card {
-    background-color: #fff; /* Default white background for cards */
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #333; /* Default text color for cards */
+    color: #333;
 }
 
 .card:hover {
@@ -311,7 +346,7 @@ body {
 }
 
 .card h3 {
-    color: #0056b3; /* Default title color */
+    color: #0056b3;
     font-size: 1.5em;
     margin-top: 0;
     margin-bottom: 15px;
@@ -321,27 +356,25 @@ body {
 
 .card h3 .fas {
     margin-right: 10px;
-    color: #28a745; /* Default icon color */
+    color: #28a745;
 }
 
 .card p {
     font-size: 0.95em;
-    color: #555; /* Default paragraph color */
+    color: #555;
     margin-bottom: 15px;
 }
 
 .card .date {
     font-size: 0.85em;
-    color: #777; /* Default date color */
+    color: #777;
     font-style: italic;
 }
 
-/* Specific card variations within sections with backgrounds */
 .section-background .card {
-    background-color: rgba(255, 255, 255, 0.9); /* Transparent white for cards on bg */
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* Specific alert/advisory card styles */
 .emergency-alert {
     background-color: rgba(255, 224, 224, 0.9);
     border-left: 5px solid #dc3545;
@@ -416,19 +449,18 @@ body {
     margin-bottom: 30px;
 }
 
-/* Tracker link inside modal */
 .modal-tracker-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: #007bff;
     color: white;
-    padding: 15px 30px;
+    padding: 15px 15px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.2em;
-    margin: 20px auto 30px auto;
+    margin: 5px auto 5px auto;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     max-width: 300px;
@@ -436,10 +468,11 @@ body {
     box-sizing: border-box;
 }
 
-.modal-tracker-link:hover {
+/* Removed duplicate .modal-tracker-link:hover, as it's grouped with other hover effects above */
+/* .modal-tracker-link:hover {
     background-color: #0056b3;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Add box-shadow to match other hover effects if missing */
-}
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+} */
 
 .modal-tracker-link i {
     font-size: 1.5em;
@@ -447,13 +480,15 @@ body {
 }
 
 .modal-service-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    margin-top: 20px;
 }
 
-.modal-service-links a {
+.modal-service-links li a {
     background-color: #007bff;
     color: white;
     padding: 15px 20px;
@@ -467,14 +502,16 @@ body {
     justify-content: center;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 100%;
+    box-sizing: border-box;
 }
 
-.modal-service-links a:hover {
+.modal-service-links li a:hover {
     background-color: #0056b3;
     transform: scale(1.03);
 }
 
-.modal-service-links a i {
+.modal-service-links li a i {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
@@ -505,18 +542,17 @@ body {
     cursor: pointer;
 }
 
-/* Keyframe Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
 @keyframes slideInTop {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Carousel Styles */
+/* --- Carousel Styles --- */
 .news-carousel-container {
     position: relative;
     width: 100%;
@@ -531,25 +567,15 @@ body {
     display: flex;
     position: relative;
     height: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
+    flex: 0 0 100%;
+    position: relative;
     width: 100%;
     height: 400px;
     box-sizing: border-box;
-    flex-shrink: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-.carousel-item.active {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
 }
 
 .carousel-item img {
@@ -647,10 +673,97 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Media Queries */
+/* --- Footer Styles --- */
+.main-footer {
+    background-color: #003c7d;
+    color: #f8f8f8;
+    padding: 50px 0 20px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 20px;
+}
+
+.footer-logo {
+    height: 100px;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-info .contact-info {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.footer-links a {
+    color: #28a745;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3fbc5d;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* --- Media Queries --- */
 @media (max-width: 992px) {
     .news-grid-other {
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .main-header {
+        height: 60px;
+        margin-bottom: -30px;
+    }
+
+    .header-branding {
+        top: -10px;
+        left: 20px;
+        position: absolute;
+    }
+
+    .header-logo {
+        height: 70px;
+    }
+
+    /* Removed: .header-branding h1 { font-size: 1.5em; } because it's duplicated and overridden later at 768px */
+
+    .main-nav {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .hero-section {
+        margin-top: 30px;
     }
 }
 
@@ -724,19 +837,6 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .footer-section { /* This rule is likely not needed due to inline styles in HTML, but kept if you have other uses for it */
-        min-width: 100%;
-        text-align: center;
-    }
-
-    .footer-section.contact p {
-        justify-content: center;
-    }
-
-    .social-icons { /* This rule is likely not needed due to inline styles in HTML, but kept if you have other uses for it */
-        text-align: center;
-    }
-
     .modal-content {
         padding: 20px;
     }
@@ -761,5 +861,43 @@ body {
     .carousel-control-next {
         padding: 5px 10px;
         font-size: 1.2em;
+    }
+
+    .main-header {
+        height: auto;
+        padding: 10px 0;
+        margin-bottom: 0;
+    }
+    .main-header .main-header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 0 10px;
+    }
+
+    .header-branding {
+        position: static;
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-logo {
+        height: 40px;
+    }
+
+    .header-branding h1 {
+        font-size: 1.5em;
+    }
+
+    .main-nav {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-section {
+        margin-top: 0;
     }
 }
