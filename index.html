@@ -10,10 +10,11 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <h1>Urbiztondo Portal</h1>
-            </div>
+        <div class="container main-header-container">
+            <a href="index.html" class="header-branding">
+                <img src="images/logo.png" alt="Urbiztondo Logo" class="header-logo">
+            </a>
+            <h1>Urbiztondo Portal</h1>
             <nav class="main-nav">
                 <button class="nav-toggle" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
@@ -36,6 +37,7 @@
                             <a href="#mission-vision">Mission and Vision</a>
                             <a href="#tourism">Tourism</a>
                             <a href="#department">Department</a>
+                            <a href="#hotline">Hotline</a>
                             <a href="#ordinances-resolutions">Municipal Ordinances and Resolutions</a>
                         </div>
                     </li>
@@ -66,23 +68,22 @@
             </div>
         </section>
 
-    <div id="servicesModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Our E-Services</h2>
-            <p class="modal-description">Explore the various online services offered by the Municipality of Urbiztondo.</p>
-            <a href="#tracker" class="modal-tracker-link"><i class="fas fa-search-dollar"></i> Service Tracker</a>
-            <div class="modal-service-links">
-                <a href="#online-application"><i class="fas fa-file-invoice"></i> Online Application</a>
-                <a href="#appointment-scheduling"><i class="fas fa-calendar-alt"></i> Appointment Scheduling</a>
-                <a href="#health-emergency-services"><i class="fas fa-first-aid"></i> Health and Emergency Services</a>
-                <a href="#forms"><i class="fas fa-download"></i> Downloadable Forms</a>
+        <div id="servicesModal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Our E-Services</h2>
+                <p class="modal-description">Explore the various online services offered by the Municipality of Urbiztondo.</p>
+                <a href="#tracker" class="modal-tracker-link"><i class="fas fa-search"></i> Status Tracker</a>
+                <ul class="modal-service-links">
+                    <li><a href="#online-application"><i class="fas fa-file-invoice"></i> Online Application</a></li>
+                    <li><a href="#appointment-scheduling"><i class="fas fa-calendar-alt"></i> Appointment Scheduling</a></li>
+                    <li><a href="#health-emergency-services"><i class="fas fa-first-aid"></i> Health and Emergency Services</a></li>
+                    <li><a href="#forms"><i class="fas fa-file-alt"></i> Downloadable Forms</a></li>
+                </ul>
+                <p class="modal-note">You can also find these services detailed in the navigation bar.</p>
             </div>
-            <p class="modal-note">You can also find these services detailed in the navigation bar.</p>
         </div>
-    </div>
 
-        <!-- Section for Announcements & Alerts with Background Image -->
         <div class="section-background announcements-background">
             <section id="announcements-alerts" class="info-section light-bg">
                 <div class="container">
@@ -111,7 +112,6 @@
             </section>
         </div>
 
-        <!-- Section for News & Events with Background Image -->
         <div class="section-background news-events-background">
             <section id="news-events" class="info-section">
                 <div class="container">
@@ -162,7 +162,6 @@
                         </div>
 
                         <div class="dots-container">
-                            <!-- Dots are dynamically created by JavaScript -->
                         </div>
 
                         <button class="carousel-control-prev" aria-label="Previous slide">&#10094;</button>
@@ -200,22 +199,22 @@
         </div>
     </main>
 
-    <footer class="footer" style="background-color: #003c7d; color: #f8f8f8; padding: 50px 0 20px; font-size: 0.9em; text-align: center;">
-        <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; padding-bottom: 20px;">
-            <img src="images/logo.png" alt="Urbiztondo Logo" style="height: 100px;" />
-            <div style="text-align: center;">
-                <h3 style="margin: 0; font-size: 1.5rem;">Bayan ng Urbiztondo</h3>
-                <p style="margin: 5px 0;">Pangasinan, Philippines</p>
-                <p style="margin: 5px 0; font-weight: bold; font-size: 1.2rem;">
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <img src="images/logo.png" alt="Urbiztondo Logo" class="footer-logo" />
+            <div class="footer-info">
+                <h3>Bayan ng Urbiztondo</h3>
+                <p>Pangasinan, Philippines</p>
+                <p class="contact-info">
                     📞 (075) 555-1234 | 📧 contact@urbiztondo.gov.ph
                 </p>
-                <p style="margin-top: 5px;">
-                    <a href="terms-of-use.html" style="color: #28a745; text-decoration: none; margin: 0 5px; transition: color 0.3s ease;">Terms of Use</a> | <a href="privacy-policy.html" style="color: #28a745; text-decoration: none; margin: 0 5px; transition: color 0.3s ease;">Privacy Policy</a>
+                <p class="footer-links">
+                    <a href="terms-of-use.html">Terms of Use</a> | <a href="privacy-policy.html">Privacy Policy</a>
                 </p>
             </div>
-            <img src="images/seal_logo.png" alt="Pangasinan Logo" style="height: 100px;" />
+            <img src="images/seal_logo.png" alt="Pangasinan Logo" class="footer-logo" />
         </div>
-        <p style="margin-top: 20px; font-size: 0.9rem; color: #ccc; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px;">
+        <p class="footer-copyright">
             © 2025 Municipality of Urbiztondo. All rights reserved.
         </p>
     </footer>
@@ -227,7 +226,6 @@
             const dropdownToggles = document.querySelectorAll('.main-nav .dropdown > .dropbtn');
 
             const openServicesModalBtn = document.getElementById('openServicesModalBtn');
-            const footerServicesLink = document.getElementById('footerServicesLink');
             const servicesModal = document.getElementById('servicesModal');
             const closeModalBtn = document.querySelector('#servicesModal .close-button');
 
@@ -241,8 +239,8 @@
             let currentSlide = 0;
             let slideInterval;
 
-            if (dotsContainer) {
-                dotsContainer.innerHTML = '';
+            // Carousel functionality
+            if (carouselItems.length > 0 && dotsContainer) {
                 carouselItems.forEach((_, index) => {
                     const dot = document.createElement('span');
                     dot.classList.add('dot');
@@ -257,67 +255,68 @@
                     dotsContainer.appendChild(dot);
                     dots.push(dot);
                 });
-            }
 
-            function showSlide(index) {
-                if (index >= carouselItems.length) {
-                    currentSlide = 0;
-                } else if (index < 0) {
-                    currentSlide = carouselItems.length - 1;
-                } else {
-                    currentSlide = index;
-                }
-
-                carouselItems.forEach(item => item.classList.remove('active'));
-                if (carouselItems[currentSlide]) {
-                    carouselItems[currentSlide].classList.add('active');
-                }
-
-                dots.forEach((dot, idx) => {
-                    if (idx === currentSlide) {
-                        dot.classList.add('active');
+                function showSlide(index) {
+                    if (index >= carouselItems.length) {
+                        currentSlide = 0;
+                    } else if (index < 0) {
+                        currentSlide = carouselItems.length - 1;
                     } else {
-                        dot.classList.remove('active');
+                        currentSlide = index;
                     }
-                });
-            }
 
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
+                    carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-            function prevSlide() {
-                showSlide(currentSlide - 1);
-            }
+                    carouselItems.forEach(item => item.classList.remove('active'));
+                    if (carouselItems[currentSlide]) {
+                        carouselItems[currentSlide].classList.add('active');
+                    }
 
-            function startInterval() {
-                slideInterval = setInterval(nextSlide, 5000);
-            }
+                    dots.forEach((dot, idx) => {
+                        if (idx === currentSlide) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
 
-            function resetInterval() {
-                clearInterval(slideInterval);
-                startInterval();
-            }
+                function nextSlide() {
+                    showSlide(currentSlide + 1);
+                }
 
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    prevSlide();
-                    resetInterval();
-                });
-            }
+                function prevSlide() {
+                    showSlide(currentSlide - 1);
+                }
 
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    nextSlide();
-                    resetInterval();
-                });
-            }
+                function startInterval() {
+                    slideInterval = setInterval(nextSlide, 5000);
+                }
 
-            if (carouselItems.length > 1) {
+                function resetInterval() {
+                    clearInterval(slideInterval);
+                    startInterval();
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        prevSlide();
+                        resetInterval();
+                    });
+                }
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        nextSlide();
+                        resetInterval();
+                    });
+                }
+
                 showSlide(currentSlide);
                 startInterval();
             }
 
+            // Navigation and Dropdown functionality
             function closeAllDropdowns() {
                 dropdownToggles.forEach(toggle => {
                     const dropdownContent = toggle.nextElementSibling;
@@ -327,26 +326,17 @@
                 });
             }
 
-            function openModal() {
-                servicesModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                servicesModal.style.display = 'none';
-                document.body.style.overflow = '';
-            }
-
             if (navToggle) {
                 navToggle.addEventListener('click', () => {
                     navLinks.classList.toggle('show');
-                    closeAllDropdowns();
+                    closeAllDropdowns(); // Close dropdowns when toggling main nav
                 });
             }
 
             dropdownToggles.forEach(toggle => {
                 toggle.addEventListener('click', (event) => {
-                    if (window.innerWidth <= 768) {
+                    // Only prevent default and toggle on smaller screens for mobile menu behavior
+                    if (window.innerWidth <= 768) { // You might want to adjust this breakpoint to match your CSS
                         event.preventDefault();
                         const dropdownContent = toggle.nextElementSibling;
 
@@ -363,6 +353,7 @@
                 });
             });
 
+            // Close mobile nav and dropdowns if clicking outside
             window.addEventListener('click', (event) => {
                 if (navLinks.classList.contains('show') && window.innerWidth <= 768) {
                     if (!navLinks.contains(event.target) && !navToggle.contains(event.target)) {
@@ -372,6 +363,7 @@
                 }
             });
 
+            // Close mobile nav and dropdowns on resize if wider than 768px
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 768) {
                     navLinks.classList.remove('show');
@@ -379,20 +371,30 @@
                 }
             });
 
+            // Modal functionality
+            function openModal() {
+                if (servicesModal) {
+                    servicesModal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                }
+            }
+
+            function closeModal() {
+                if (servicesModal) {
+                    servicesModal.style.display = 'none';
+                    document.body.style.overflow = ''; // Restore scrolling
+                }
+            }
+
             if (openServicesModalBtn) {
                 openServicesModalBtn.addEventListener('click', openModal);
-            }
-            if (footerServicesLink) {
-                footerServicesLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    openModal();
-                });
             }
 
             if (closeModalBtn) {
                 closeModalBtn.addEventListener('click', closeModal);
             }
 
+            // Close modal when clicking outside of modal content
             if (servicesModal) {
                 servicesModal.addEventListener('click', (event) => {
                     if (event.target === servicesModal) {
