@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - Urbiztondo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a237e;
+      --secondary: #283593;
+      --highlight: #536dfe;
+      --bg: #f0f2f5;
+      --white: #ffffff;
+      --text: #2c3e50;
+      --transition: all 0.4s ease;
+      --shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      --radius: 1rem;
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --white: #1e1e1e;
+      --text: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: var(--transition);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: var(--transition);
+    }
+
+    header.navbar {
+      height: 60px;
+      background-color: var(--white);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 2rem;
+      position: fixed;
+      top: 0;
+      left: 280px;
+      right: 0;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .navbar button,
+    .navbar .icon {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .navbar button:hover,
+    .navbar .icon:hover {
+      color: var(--highlight);
+    }
+
+    aside {
+      width: 280px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 2rem 1.5rem;
+      color: var(--white);
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow);
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-group {
+      margin-bottom: 2rem;
+    }
+
+    .nav-title {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #c5cae9;
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      transition: var(--transition);
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background-color: var(--highlight);
+      opacity: 0;
+      transition: var(--transition);
+      border-radius: 4px;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #e8eaf6;
+    }
+
+    .nav-link:hover::before {
+      opacity: 1;
+    }
+
+    main {
+      margin-left: 280px;
+      padding: 5rem 3rem 3rem;
+      flex-grow: 1;
+      transition: var(--transition);
+    }
+
+    .card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      transition: transform 0.2s ease, background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div class="logo">🛠️ Admin Panel</div>
+
+    <div class="nav-group">
+      <div class="nav-title">Analytics</div>
+      <a href="#analytics-overview" class="nav-link">Dashboard Overview</a>
+      <a href="#charts" class="nav-link">Charts</a>
+      <a href="#tables" class="nav-link">Tables</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-title">Content Manager</div>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#announcements" class="nav-link">Announcements</a>
+      <a href="#news-events" class="nav-link">News & Events</a>
+      <a href="#about" class="nav-link">About Us</a>
+      <a href="#departments" class="nav-link">Departments</a>
+      <a href="#ordinances" class="nav-link">Ordinances</a>
+      <a href="#health" class="nav-link">Health & Emergency</a>
+      <a href="#terms" class="nav-link">Terms & Conditions</a>
+      <a href="#privacy" class="nav-link">Privacy Policy</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-title">User Roles</div>
+      <a href="#admin" class="nav-link">System Administrator</a>
+      <a href="#pro" class="nav-link">Public Relations Officer</a>
+      <a href="#content" class="nav-link">Content Manager</a>
+      <a href="#service" class="nav-link">Service Processor</a>
+      <a href="#treasurer" class="nav-link">Treasurer</a>
+      <a href="#customer" class="nav-link">Customer Service</a>
+      <a href="#appointments" class="nav-link">Appointment Manager</a>
+      <a href="#health-staff" class="nav-link">Health Services</a>
+      <a href="#records" class="nav-link">Records Officer</a>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <button id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+    <span class="icon" title="Notifications">🔔</span>
+    <span class="icon" title="Profile">👤</span>
+  </header>
+
+  <main>
+    <div class="card" id="analytics-overview">
+      <h2>Analytics Overview</h2>
+      <p>View summaries of activity, metrics, and performance insights.</p>
+    </div>
+
+    <div class="card" id="charts">
+      <h2>Visual Charts</h2>
+      <p>Interactive graphs and trends from system usage.</p>
+    </div>
+
+    <div class="card" id="tables">
+      <h2>Data Tables</h2>
+      <p>Tabulated reports for audits, logs, and service records.</p>
+    </div>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

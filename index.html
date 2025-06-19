@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urbiztondo E-Service Citizen Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>Urbiztondo Portal</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#welcome">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Announcement <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#emergency-alerts">Emergency Alerts</a>
+                            <a href="#advisories">Advisories</a>
+                            <a href="#municipal-programs">Municipal Programs</a>
+                            <a href="#scholarship-job">Scholarship and Job Posting</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">About Urbiztondo <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#history">History</a>
+                            <a href="#mission-vision">Mission and Vision</a>
+                            <a href="#tourism">Tourism</a>
+                            <a href="#department">Department</a>
+                            <a href="#ordinances-resolutions">Municipal Ordinances and Resolutions</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#online-application">Online Application</a>
+                            <a href="#appointment-scheduling">Appointment Scheduling</a>
+                            <a href="#health-emergency-services">Health and Emergency Services</a>
+                            <a href="#forms">Forms</a>
+                            <a href="#tracker">Tracker</a>
+                        </div>
+                    </li>
+                    <li><a href="#login-signin">Log-in/Sign-in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="welcome" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Welcome to the Urbiztondo E-Service Citizen Portal</h2>
+                    <p>Your gateway to efficient municipal services and community information.</p>
+                    <button id="openServicesModalBtn" class="btn btn-primary">Explore Services</button>
+                </div>
+            </div>
+        </section>
+
+    <div id="servicesModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Our E-Services</h2>
+            <p class="modal-description">Explore the various online services offered by the Municipality of Urbiztondo.</p>
+            <!-- Tracker Link at the top -->
+            <a href="#tracker" class="modal-tracker-link"><i class="fas fa-search"></i> Service Tracker</a>
+            <div class="modal-service-links">
+                <a href="#online-application"><i class="fas fa-file-invoice"></i> Online Application</a>
+                <a href="#appointment-scheduling"><i class="fas fa-calendar-alt"></i> Appointment Scheduling</a>
+                <a href="#health-emergency-services"><i class="fas fa-first-aid"></i> Health and Emergency Services</a>
+                <a href="#forms"><i class="fas fa-download"></i> Downloadable Forms</a>
+            </div>
+            <p class="modal-note">You can also find these services detailed in the navigation bar.</p>
+        </div>
+    </div>
+
+        <section id="announcements-alerts" class="info-section light-bg">
+            <div class="container">
+                <h2>Announcements & Alerts</h2>
+                <div class="grid-3-cols">
+                    <div class="card">
+                        <h3><i class="fas fa-bullhorn"></i> General Announcement</h3>
+                        <p>Public Advisory: Water interruption in selected barangays on July 5, 2025, from 9 AM to 4 PM.</p>
+                        <span class="date">June 25, 2025</span>
+                    </div>
+                    <div class="card emergency-alert">
+                        <h3><i class="fas fa-triangle-exclamation"></i> Emergency Alert: Flood Warning</h3>
+                        <p>Heavy rainfall expected. Residents in low-lying areas are advised to prepare for possible evacuation.</p>
+                        <span class="date">June 24, 2025</span>
+                    </div>
+                    <div class="card advisory">
+                        <h3><i class="fas fa-circle-info"></i> Road Advisory</h3>
+                        <p>Portion of National Highway closed for repairs on July 1-3, 2025. Please use alternate routes.</p>
+                        <span class="date">June 23, 2025</span>
+                    </div>
+                </div>
+                <div class="section-more-link">
+                    <a href="#" class="btn btn-tertiary">View All Announcements</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="news-events" class="info-section">
+            <div class="container">
+                <h2>News & Events</h2>
+
+                <div class="news-carousel-container">
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1200x500/007bff/ffffff?text=URBIZTONDO+ATHLETES+HAUL+53" alt="Urbiztondo Athletes News">
+                            <div class="carousel-caption">
+                                <h3>URBIZTONDO REGIONAL ATHLETIC MEET (RAAM 2025)</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#" class="btn btn-primary btn-small">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1200x500/28a745/ffffff?text=NEW+MUNICIPAL+HALL+OPENING" alt="New Municipal Hall Opening">
+                            <div class="carousel-caption">
+                                <h3>NEW MUNICIPAL HALL GRAND OPENING CEREMONY</h3>
+                                <p>Join us for the inauguration of our state-of-the-art municipal hall, designed to serve you better.</p>
+                                <a href="#" class="btn btn-primary btn-small">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1200x500/ffc107/ffffff?text=YOUTH+EMPOWERMENT+PROGRAM" alt="Youth Empowerment Program">
+                            <div class="carousel-caption">
+                                <h3>URBIZTONDO LAUNCHES YOUTH EMPOWERMENT PROGRAM 2025</h3>
+                                <p>Providing opportunities for skills development and leadership training for our young residents.</p>
+                                <a href="#" class="btn btn-primary btn-small">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1200x500/6f42c1/ffffff?text=ANNUAL+TOWN+FIESTA" alt="Annual Town Fiesta">
+                            <div class="carousel-caption">
+                                <h3>URBIZTONDO CELEBRATES ANNUAL TOWN FIESTA WITH GRAND PARADE</h3>
+                                <p>A vibrant celebration of culture, community, and tradition. Don't miss the festive activities!</p>
+                                <a href="#" class="btn btn-primary btn-small">Read More</a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1200x500/dc3545/ffffff?text=AGRICULTURAL+TRADE+FAIR" alt="Agricultural Trade Fair">
+                            <div class="carousel-caption">
+                                <h3>SUCCESSFUL AGRICULTURAL TRADE FAIR BOOSTS LOCAL FARMERS</h3>
+                                <p>Local produce showcased and new markets opened, strengthening our agricultural sector.</p>
+                                <a href="#" class="btn btn-primary btn-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dots-container">
+                        <!-- Dots are dynamically created by JavaScript -->
+                    </div>
+
+                    <button class="carousel-control-prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="carousel-control-next" aria-label="Next slide">&#10095;</button>
+                </div>
+
+                <div class="news-grid-other">
+                    <div class="card">
+                        <h3>Urbiztondo Clean-up Drive Success</h3>
+                        <p>Over 1,000 volunteers participated in the annual clean-up drive, making our town greener and healthier.</p>
+                        <span class="date">June 22, 2025</span>
+                    </div>
+                    <div class="card">
+                        <h3>Youth Sports Fest Kicks Off</h3>
+                        <p>The 2025 Youth Sports Fest began with an exciting opening ceremony at the Municipal Oval.</p>
+                        <span class="date">June 20, 2025</span>
+                    </div>
+                    <div class="card">
+                        <h3>Community Health Fair Scheduled</h3>
+                        <p>Free medical check-ups and consultations will be offered at the upcoming community health fair on July 10, 2025.</p>
+                        <span class="date">June 18, 2025</span>
+                    </div>
+                    <div class="card">
+                        <h3>Local Business Summit Announced</h3>
+                        <p>Entrepreneurs are invited to the Urbiztondo Local Business Summit on July 15, 2025, for networking and workshops.</p>
+                        <span class="date">June 17, 2025</span>
+                    </div>
+                </div>
+
+                <div class="section-more-link">
+                    <a href="#" class="btn btn-tertiary">More News & Events</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="background-color: #222; color: #f8f8f8; padding: 50px 0 20px; font-size: 0.9em; text-align: center;">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; padding-bottom: 20px;">
+            <img src="images/logo.png" alt="Urbiztondo Logo" style="height: 100px;" />
+            <div style="text-align: center;">
+                <h3 style="margin: 0; font-size: 1.5rem;">Bayan ng Urbiztondo</h3>
+                <p style="margin: 5px 0;">Pangasinan, Philippines</p>
+                <p style="margin: 5px 0; font-weight: bold; font-size: 1.2rem;">
+                    📞 (075) 555-1234 | 📧 contact@urbiztondo.gov.ph
+                </p>
+                <p style="margin-top: 5px;">
+                    <a href="terms-of-use.html" style="color: #28a745; text-decoration: none; margin: 0 5px; transition: color 0.3s ease;">Terms of Use</a> | <a href="privacy-policy.html" style="color: #28a745; text-decoration: none; margin: 0 5px; transition: color 0.3s ease;">Privacy Policy</a>
+                </p>
+            </div>
+            <img src="images/seal_logo.png" alt="Pangasinan Logo" style="height: 100px;" />
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #ccc; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px;">
+            © 2025 Municipality of Urbiztondo. All rights reserved.
+        </p>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdownToggles = document.querySelectorAll('.main-nav .dropdown > .dropbtn');
+
+            const openServicesModalBtn = document.getElementById('openServicesModalBtn');
+            const footerServicesLink = document.getElementById('footerServicesLink');
+            const servicesModal = document.getElementById('servicesModal');
+            const closeModalBtn = document.querySelector('#servicesModal .close-button');
+
+            const carouselInner = document.querySelector('.carousel-inner');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const dotsContainer = document.querySelector('.dots-container');
+            const dots = [];
+            const prevBtn = document.querySelector('.carousel-control-prev');
+            const nextBtn = document.querySelector('.carousel-control-next');
+
+            let currentSlide = 0;
+            let slideInterval;
+
+            if (dotsContainer) {
+                dotsContainer.innerHTML = '';
+                carouselItems.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    dot.setAttribute('data-slide', index);
+                    if (index === 0) {
+                        dot.classList.add('active');
+                    }
+                    dot.addEventListener('click', () => {
+                        showSlide(index);
+                        resetInterval();
+                    });
+                    dotsContainer.appendChild(dot);
+                    dots.push(dot);
+                });
+            }
+
+            function showSlide(index) {
+                if (index >= carouselItems.length) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = carouselItems.length - 1;
+                } else {
+                    currentSlide = index;
+                }
+
+                carouselItems.forEach(item => item.classList.remove('active'));
+                if (carouselItems[currentSlide]) {
+                    carouselItems[currentSlide].classList.add('active');
+                }
+
+                dots.forEach((dot, idx) => {
+                    if (idx === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetInterval();
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetInterval();
+                });
+            }
+
+            if (carouselItems.length > 1) {
+                showSlide(currentSlide);
+                startInterval();
+            }
+
+            function closeAllDropdowns() {
+                dropdownToggles.forEach(toggle => {
+                    const dropdownContent = toggle.nextElementSibling;
+                    if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+                        dropdownContent.style.display = 'none';
+                    }
+                });
+            }
+
+            function openModal() {
+                servicesModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                servicesModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            if (navToggle) {
+                navToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                    closeAllDropdowns();
+                });
+            }
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (event) => {
+                    if (window.innerWidth <= 768) {
+                        event.preventDefault();
+                        const dropdownContent = toggle.nextElementSibling;
+
+                        if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+                            dropdownToggles.forEach(otherToggle => {
+                                const otherDropdownContent = otherToggle.nextElementSibling;
+                                if (otherToggle !== toggle && otherDropdownContent && otherDropdownContent.style.display === 'block') {
+                                    otherDropdownContent.style.display = 'none';
+                                }
+                            });
+                            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                        }
+                    }
+                });
+            });
+
+            window.addEventListener('click', (event) => {
+                if (navLinks.classList.contains('show') && window.innerWidth <= 768) {
+                    if (!navLinks.contains(event.target) && !navToggle.contains(event.target)) {
+                        navLinks.classList.remove('show');
+                        closeAllDropdowns();
+                    }
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('show');
+                    closeAllDropdowns();
+                }
+            });
+
+            if (openServicesModalBtn) {
+                openServicesModalBtn.addEventListener('click', openModal);
+            }
+            if (footerServicesLink) {
+                footerServicesLink.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    openModal();
+                });
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeModal);
+            }
+
+            if (servicesModal) {
+                servicesModal.addEventListener('click', (event) => {
+                    if (event.target === servicesModal) {
+                        closeModal();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
